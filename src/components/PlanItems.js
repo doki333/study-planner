@@ -1,7 +1,7 @@
 import React from 'react';
 
-function PlanList() {
-  return <div>PlanList</div>;
+function PlanItems({ todo, onToggle }) {
+  return <div>{todo.text}</div>;
 }
 
-export default PlanList;
+export default React.memo(PlanItems);

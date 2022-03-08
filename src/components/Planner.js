@@ -1,7 +1,9 @@
 import React, { useCallback, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
+import { onInsert, onToggle } from '../common/actions';
 import Goal from './Goal';
-import PlanList from './PlanItems';
+import PlanList from './PlanList';
 
 const PlanBlock = styled.div`
   width: 512px;
@@ -19,24 +21,30 @@ const PlanBlock = styled.div`
   }
 `;
 
-function Planner({ todos, onRemove, onInsert, onToggle }) {
+function Planner() {
   const [value, setValue] = useState('');
+  const dispatch = useDispatch();
   const onChange = useCallback((e) => {
     setValue(e.target.value);
   }, []);
   const onSubmit = useCallback(
     (e) => {
-      onInsert(value);
+      const newTodo = {
+        text: value,
+        checked: false,
+      };
+      dispatch(onInsert(newTodo));
       setValue('');
       e.preventDefault();
     },
-    [onInsert, value],
+    [value, dispatch],
   );
+
   return (
     <PlanBlock>
       <div className="planPart">
         <p>TODAY'S PLAN</p>
-        <form>
+        <form onSubmit={onSubmit}>
           <input
             type="text"
             style={{ width: '90%' }}
@@ -45,7 +53,7 @@ function Planner({ todos, onRemove, onInsert, onToggle }) {
           />
           <button>입력</button>
         </form>
-        <PlanList todos={todos} onRemove={onRemove} onToggle={onToggle} />
+        <PlanList />
       </div>
       <Goal />
     </PlanBlock>

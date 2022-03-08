@@ -8,16 +8,10 @@ const WholeBlock = styled.div`
   width: 768px;
   margin: 0 auto;
 `;
-function PlanAndGoal({ todos, onRemove, onInsert, onToggle, onSet }) {
+function PlanAndGoal() {
   return (
     <WholeBlock>
-      <Planner
-        todos={todos}
-        onRemove={onRemove}
-        onInsert={onInsert}
-        onToggle={onToggle}
-        onSet={onSet}
-      />
+      <Planner />
       <TimeTable />
     </WholeBlock>
   );

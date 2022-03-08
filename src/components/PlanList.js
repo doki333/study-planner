@@ -1,8 +1,24 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { onToggle } from '../common/actions';
+import PlanItems from './PlanItems';
 
-function PlanList({ todos, onRemove, onToggle }) {
-  console.log(todos);
-  return <div>planlist</div>;
+function PlanList() {
+  const todos = useSelector((state) => state.todos);
+  const dispatch = useDispatch();
+  return (
+    <div>
+      {todos.map((todo) => (
+        <PlanItems
+          key={todo.id}
+          todo={todo}
+          onToggle={() => {
+            dispatch(onToggle(todo.id));
+          }}
+        />
+      ))}
+    </div>
+  );
 }
 
-export default PlanList;
+export default React.memo(PlanList);
