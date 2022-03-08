@@ -33,7 +33,7 @@ const StopWatchPart = styled.div`
   }
 `;
 
-function StopWatch({ quotes }) {
+function StopWatch() {
   const [time, setTime] = useState(0);
   const [isActive, setIsActive] = useState(false);
   const [isPaused, setIsPaused] = useState(true);
@@ -68,7 +68,7 @@ function StopWatch({ quotes }) {
 
   return (
     <WatchTopBlock>
-      <DateAndQuotes quotes={quotes} />
+      <DateAndQuotes />
 
       <WatchBottomBlock>
         <StopWatchPart>

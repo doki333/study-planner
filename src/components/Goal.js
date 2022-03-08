@@ -1,11 +1,9 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import styled from 'styled-components';
 
 const GoalBlock = styled.div`
-  height: 100px;
-  border: 1px solid black;
-  width: 768px;
-  margin: 0 auto;
+  height: 104px;
+  width: 512px;
   background: lightgrey;
 `;
 
