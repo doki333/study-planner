@@ -5,7 +5,7 @@ import { useTable } from 'react-table';
 const TimeTableZone = styled.div`
   width: 256px;
   table {
-    background: lightskyblue;
+    background: #effffd;
     tr {
     }
     td {
@@ -38,19 +38,24 @@ const setData = () => {
 };
 
 function TimeTable() {
+  const blue = '#85F4FF';
   const [start, setStart] = useState(false);
   const onClick = useCallback(
     (e) => {
       setStart(!start);
-      e.target.style.background = 'red';
+      e.target.style.background = `${blue}`;
     },
     [start],
   );
 
   const onHover = useCallback(
     (e) => {
-      if (start && !e.target.innerText && e.target.style.background !== 'red') {
-        e.target.style.background = 'red';
+      if (
+        start &&
+        !e.target.innerText &&
+        e.target.style.background !== `${blue}`
+      ) {
+        e.target.style.background = `${blue}`;
         e.target.attributes.indexvalue.value = '1';
       } else {
         return;
@@ -62,14 +67,17 @@ function TimeTable() {
   const onDoubleClick = (e) => {
     const num = e.target.attributes.indexvalue.value;
     if (num === '0') {
-      e.target.style.background = `linear-gradient(to right, red 50%, transparent 50%)`;
+      e.target.style.background = `linear-gradient(to right, ${blue} 50%, transparent 50%)`;
       e.target.attributes.indexvalue.value = '-0.5';
     } else if (num === '-0.5') {
-      e.target.style.background = `linear-gradient(to left, red 50%, transparent 50%)`;
+      e.target.style.background = `linear-gradient(to left, ${blue} 50%, transparent 50%)`;
       e.target.attributes.indexvalue.value = '0.5';
     } else if (num === '0.5') {
-      e.target.style.background = 'red';
+      e.target.style.background = `${blue}`;
       e.target.attributes.indexvalue.value = '1';
+    } else if (num === '1') {
+      e.target.style.background = `linear-gradient(to right, ${blue} 50%, transparent 50%)`;
+      e.target.attributes.indexvalue.value = '-0.5';
     }
   };
   const onContextClick = (e) => {

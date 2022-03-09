@@ -7,6 +7,9 @@ const DateAndQuotesBlock = styled.div`
   padding: 1rem;
   p {
     margin: 0;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 2rem;
   }
   .today {
     font-size: 1.5rem;
@@ -23,7 +26,7 @@ function DateAndQuotes() {
       <p className="today">
         {year}-{month.padStart(2, '0')}-{date.padStart(2, '0')}
       </p>
-      <p>Cheer up!</p>
+      <p>Strive for progress, not perfection.</p>
     </DateAndQuotesBlock>
   );
 }

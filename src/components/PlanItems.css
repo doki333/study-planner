@@ -1,0 +1,9 @@
+.checkbox {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.checked {
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: red;
+}

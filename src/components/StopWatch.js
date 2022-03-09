@@ -1,15 +1,16 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import DateAndQuotes from './DateAndQuotes';
+import { BiStopwatch } from 'react-icons/bi';
 
 const WatchTopBlock = styled.div`
   width: 768px;
   height: 130px;
-  background: beige;
+  background: #90e0ef;
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  margin-top: 5rem;
+  margin-top: 3rem;
 `;
 
 const WatchBottomBlock = styled.div`
@@ -26,8 +27,26 @@ const WatchBottomBlock = styled.div`
   }
 `;
 
+const BtnsBlock = styled.div`
+  button {
+    font-size: 0.9rem;
+    font-weight: 600;
+    &:active {
+      background: navy;
+      color: white;
+    }
+  }
+`;
+
 const StopWatchPart = styled.div`
+  display: flex;
   font-family: 'ZCOOL QingKe HuangYou', cursive;
+  p {
+    margin: 0;
+    svg {
+      font-size: 2.5rem;
+    }
+  }
   span {
     font-size: 2.5rem;
   }
@@ -72,18 +91,20 @@ function StopWatch() {
 
       <WatchBottomBlock>
         <StopWatchPart>
+          <p>
+            <BiStopwatch />
+          </p>
           <span>
-            TOTAL TIME IS...
-            {('0' + Math.floor((time / 3600000) % 24)).slice(-2)}
-          </span>{' '}
-          :<span> {('0' + Math.floor((time / 60000) % 60)).slice(-2)}</span> :
-          <span> {('0' + Math.floor((time / 1000) % 60)).slice(-2)}</span>
+            {('0' + Math.floor((time / 3600000) % 24)).slice(-2)} :
+            {('0' + Math.floor((time / 60000) % 60)).slice(-2)} :
+            {('0' + Math.floor((time / 1000) % 60)).slice(-2)}
+          </span>
         </StopWatchPart>
-        <div>
-          <button onClick={onClickStart}>시작</button>
-          <button onClick={onClickPause}>멈춤</button>
+        <BtnsBlock>
+          <button onClick={onClickStart}>START</button>
+          <button onClick={onClickPause}>PAUSE</button>
           <button onClick={onReset}>RESET</button>
-        </div>
+        </BtnsBlock>
       </WatchBottomBlock>
     </WatchTopBlock>
   );
