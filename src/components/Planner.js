@@ -16,32 +16,46 @@ const PlanBlock = styled.div`
     height: 435px;
     background: white;
     form {
-      margin-left: 0.5rem;
+      display: flex;
+      width: 100%;
+      height: 40px;
       input {
-        background: none;
+        flex: 1;
+        width: 460.9px;
+        background: #e7f0f5;
+        height: 40px;
         border: none;
         outline: none;
-        border-bottom: 1px solid black;
-        font-size: 1.3rem;
-        padding: 0.3rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        font-size: 1rem;
       }
       button {
-        background: none;
+        height: 42px;
+        width: 3rem;
+        background: #00b4d8;
+        color: white;
         border: none;
         outline: none;
         cursor: pointer;
-        padding: 0.2rem 1rem;
-        font-size: 1.5rem;
-        line-height: 1;
-        margin-left: 0.6rem;
+        svg {
+          font-size: 2rem;
+        }
+        &:hover {
+          background: #03045e;
+          svg {
+            transition: 1s ease-out;
+            transform: rotate(-90deg);
+          }
+        }
       }
     }
     #title {
       margin: 0;
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       font-weight: 600;
-      margin-left: 1rem;
-      margin-top: 0.5rem;
+      text-align: center;
+      margin-top: 0.3rem;
       color: #03045e;
     }
   }
@@ -73,11 +87,10 @@ function Planner() {
   return (
     <PlanBlock>
       <div className="planPart">
-        <p id="title">TODAY'S PLAN</p>
         <form onSubmit={onSubmit}>
           <input
             type="text"
-            style={{ width: '85%' }}
+            // style={{ width: '85%' }}
             value={value}
             onChange={onChange}
           />
@@ -85,6 +98,7 @@ function Planner() {
             <MdAdd />
           </button>
         </form>
+        <p id="title">TODAY'S PLAN</p>
         <PlanList />
       </div>
       <Goal />

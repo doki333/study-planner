@@ -4,9 +4,12 @@ import { useTable } from 'react-table';
 
 const TimeTableZone = styled.div`
   width: 256px;
+  border-left: 1px solid black;
   table {
-    background: #effffd;
+    background: #e7f7fa;
     tr {
+      color: #03045e;
+      font-weight: 600;
     }
     td {
       background: transparent;
@@ -38,7 +41,7 @@ const setData = () => {
 };
 
 function TimeTable() {
-  const blue = '#85F4FF';
+  const blue = '#90DBE8';
   const [start, setStart] = useState(false);
   const onClick = useCallback(
     (e) => {

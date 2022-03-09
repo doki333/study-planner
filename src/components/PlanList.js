@@ -5,9 +5,6 @@ import PlanItems from './PlanItems';
 import styled from 'styled-components';
 
 const ListBlock = styled.div`
-  margin-top: 0.5rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
   overflow-y: auto;
   height: 332px;
   padding-bottom: 0.4rem;

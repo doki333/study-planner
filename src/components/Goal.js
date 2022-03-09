@@ -1,19 +1,18 @@
 import React, { useCallback, useState } from 'react';
 import styled from 'styled-components';
+import { BsCheck2Circle } from 'react-icons/bs';
 
 const GoalBlock = styled.div`
   height: 104px;
   width: 512px;
-  background: #a7c5d5;
-  /* font-family: 'Fredoka', sans-serif;
-  font-family: 'Noto Sans KR', sans-serif; */
+  background: #c2d6e1;
+
   p {
     margin: 0;
     padding-left: 0.5rem;
     padding-top: 0.5rem;
     font-weight: 600;
     font-size: 1rem;
-    border-bottom: 1px solid black;
   }
   form {
     display: flex;
@@ -22,19 +21,27 @@ const GoalBlock = styled.div`
       resize: none;
       width: 90%;
       font-size: 0.9rem;
-
       padding-top: 0.5rem;
       padding-bottom: 0.6rem;
-      padding-left: 1rem;
+      padding-left: 0.5rem;
       padding-right: 1rem;
       background: none;
       border: none;
       outline: none;
       height: 55px;
+      font-family: 'Fredoka', sans-serif;
+      font-family: 'Noto Sans KR', sans-serif;
     }
     button {
       border: none;
-      background: white;
+      background: none;
+      cursor: pointer;
+      /* outline: none; */
+      font-size: 1.5rem;
+    }
+    .editing {
+      color: #5f95b2;
+      cursor: default;
     }
   }
 `;
@@ -71,12 +78,9 @@ function Goal() {
           onChange={onChange}
           readOnly={editing}
         />
-        <button>입력</button>
-        {/* <div
-          style={{ width: '100%', display: 'flex', justifyContent: 'flex-end' }}
-        >
-          <button>입력</button>
-        </div> */}
+        <button className={editing ? 'editing' : ''}>
+          <BsCheck2Circle />
+        </button>
       </form>
     </GoalBlock>
   );

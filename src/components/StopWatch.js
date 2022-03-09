@@ -29,10 +29,18 @@ const WatchBottomBlock = styled.div`
 
 const BtnsBlock = styled.div`
   button {
+    &:nth-child(1) {
+      border-top-left-radius: 1.5rem;
+      border-bottom-left-radius: 1.5rem;
+    }
+    &:nth-child(3) {
+      border-top-right-radius: 1.5rem;
+      border-bottom-right-radius: 1.5rem;
+    }
     font-size: 0.9rem;
     font-weight: 600;
     &:active {
-      background: navy;
+      background: #03045e;
       color: white;
     }
   }
