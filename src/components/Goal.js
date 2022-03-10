@@ -36,7 +36,7 @@ const GoalBlock = styled.div`
       border: none;
       background: none;
       cursor: pointer;
-      /* outline: none; */
+      color: #03045e;
       font-size: 1.5rem;
     }
     .editing {
