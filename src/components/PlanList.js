@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { onRemove, onToggle } from '../common/actions';
 import PlanItems from './PlanItems';
@@ -12,7 +12,18 @@ const ListBlock = styled.div`
 function PlanList() {
   const todos = useSelector((state) => state.todos);
   const dispatch = useDispatch();
-
+  const toggle = useCallback(
+    (id) => {
+      dispatch(onToggle(id));
+    },
+    [dispatch],
+  );
+  const remove = useCallback(
+    (id) => {
+      dispatch(onRemove(id));
+    },
+    [dispatch],
+  );
   return (
     <ListBlock>
       {todos.map((todo) => (
@@ -20,10 +31,10 @@ function PlanList() {
           key={todo.id}
           todo={todo}
           onToggle={() => {
-            dispatch(onToggle(todo.id));
+            toggle(todo.id);
           }}
           onRemove={() => {
-            dispatch(onRemove(todo.id));
+            remove(todo.id);
           }}
         />
       ))}
