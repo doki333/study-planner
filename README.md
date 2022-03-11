@@ -1,70 +1,28 @@
-# Getting Started with Create React App
+# Study Plan App with Create React App & Redux
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+리액트를 다루는 기술, 생활코딩! React 프로그래밍 책에서 배운 내용을 토대로 만든 스터디플랜 앱입니다. 스톱워치와 타임테이블, 투두리스트, 메모 기능을 제공합니다. 데이터 관리를 위해 리덕스를 사용했습니다
 
-## Available Scripts
+# Function
 
-In the project directory, you can run:
+1. 스톱워치 (setInterval 기능을 사용해 구현. start, pause, reset 가능)
+2. 타임테이블 (클릭을 통해 컬러링 시작. 마우스 hover를 통해 색을 입힐수 있음. 다시 한번 클릭시 편집 모드 종료)  
+   2-1. 좌클릭을 통해 삭제 가능. 더블 클릭을 통해 5분 단위로 시간 조정 가능.
+3. 메모 기능 (클릭 시 편집 시작)
+4. 투두리스트 (삭제, 토글, 추가 가능)
 
-### `npm start`
+# Dependencies
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- react-icons
+- react-redux
+- redux
+- react-table
+- styled-components
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Language
 
-### `npm test`
+- Javascript
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Usage Example
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<img src="./todolistadd.gif" alt="todolist usage example" title="usage example" width="50%" />
+<img src="./watchandtimetable.gif" alt="stop watch and timetable usage example" title="usage example" width="50%" />
